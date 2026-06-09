@@ -3,6 +3,7 @@ package com.dkghosh.tradingjournal.service;
 import com.dkghosh.tradingjournal.dto.TradeRequestDTO;
 import com.dkghosh.tradingjournal.dto.TradeResponseDTO;
 import com.dkghosh.tradingjournal.entity.Trade;
+import com.dkghosh.tradingjournal.exception.ResourceNotFoundException;
 import com.dkghosh.tradingjournal.mapper.TradeMapper;
 import com.dkghosh.tradingjournal.repository.TradeRepository;
 import lombok.RequiredArgsConstructor;
@@ -55,6 +56,8 @@ public class TradeServiceImpl implements TradeService {
 
     private Trade findTradeById(Long id) {
         return tradeRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Trade not found with id: " + id));
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Trade not found with id: " + id)
+                );
     }
 }
