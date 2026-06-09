@@ -1,6 +1,8 @@
 package com.dkghosh.tradingjournal.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -46,6 +48,11 @@ public class Trade {
 
     @Column(name = "exit_price", precision = 19, scale = 4)
     private BigDecimal exitPrice;
+
+    @NotNull
+    @Positive
+    @Column(name = "quantity", nullable = false)
+    private Integer quantity;
 
     @Column(length = 20)
     private String result;
