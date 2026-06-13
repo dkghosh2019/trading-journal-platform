@@ -1,0 +1,35 @@
+<h2>Trade History</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Broker</th>
+            <th>Account</th>
+            <th>Symbol</th>
+            <th>Direction</th>
+            <th>Entry</th>
+            <th>Exit</th>
+            <th>Qty</th>
+            <th>PnL</th>
+            <th>Result</th>
+            <th>Emotion</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (trade of trades; track trade.id) {
+        <tr>
+            <td>{{ trade.brokerName }}</td>
+            <td>{{ trade.accountId }}</td>
+            <td>{{ trade.symbol }}</td>
+            <td>{{ trade.direction }}</td>
+            <td>{{ trade.entryPrice }}</td>
+            <td>{{ trade.exitPrice }}</td>
+            <td>{{ trade.quantity }}</td>
+            <td>{{ trade.realizedPnL }}</td>
+            <td>{{ trade.result }}</td>
+            <td>{{ trade.emotion }}</td>
+        </tr>
+        }
+    </tbody>
+</table>

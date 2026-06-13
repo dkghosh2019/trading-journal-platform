@@ -1,0 +1,60 @@
+<h2>Add Trade</h2>
+
+<form (ngSubmit)="saveTrade()">
+
+    <div>
+        <label>Broker:</label>
+        <input [(ngModel)]="trade.brokerName" name="brokerName">
+    </div>
+
+    <div>
+        <label>Account ID:</label>
+        <input [(ngModel)]="trade.accountId" name="accountId">
+    </div>
+
+    <div>
+        <label>Symbol:</label>
+        <input [(ngModel)]="trade.symbol" name="symbol">
+    </div>
+
+    <div>
+        <label>Direction:</label>
+        <select [(ngModel)]="trade.direction" name="direction">
+      <option>LONG</option>
+      <option>SHORT</option>
+    </select>
+    </div>
+
+    <div>
+        <label>Entry Price:</label>
+        <input type="number" [(ngModel)]="trade.entryPrice" name="entryPrice">
+    </div>
+
+    <div>
+        <label>Exit Price:</label>
+        <input type="number" [(ngModel)]="trade.exitPrice" name="exitPrice">
+    </div>
+
+    <div>
+        <label>Quantity:</label>
+        <input type="number" [(ngModel)]="trade.quantity" name="quantity">
+    </div>
+
+    <div>
+        <label>Emotion:</label>
+        <input [(ngModel)]="trade.emotion" name="emotion">
+    </div>
+
+    <div>
+        <label>Setup:</label>
+        <input [(ngModel)]="trade.setup" name="setup">
+    </div>
+
+    <div>
+        <label>Notes:</label>
+        <textarea [(ngModel)]="trade.notes" name="notes"></textarea>
+    </div>
+
+    <button type="submit">Save Trade</button>
+
+</form>
